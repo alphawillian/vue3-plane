@@ -1,0 +1,29 @@
+{
+  "name": "vue3-plane",
+  "version": "1.0.0",
+  "description": "vue3学习创建飞机 * 学习vue3的目的",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "npm run server",
+    "server": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphawillian/vue3-plane.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alphawillian/vue3-plane/issues"
+  },
+  "homepage": "https://github.com/alphawillian/vue3-plane#readme",
+  "devDependencies": {
+    "@vue/runtime-core": "^3.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
