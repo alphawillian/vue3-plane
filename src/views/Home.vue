@@ -6,6 +6,8 @@
     <div @click="clickNum">{{num}}</div>
     <div @click="clickNum1">{{num1}}</div>
     <div>{{addNum}}</div>
+    <button @click="goto">goto</button>
+    <div>{{list}}</div>
   </div>
 </template>
 
@@ -14,6 +16,8 @@ import NavHeader from '@/components/navHeader/NavHeader'
 import NavMain from '@/components/navMain/NavMain'
 import NavFooter from '@/components/navFooter/NavFooter'
 import {defineComponent, ref, reactive, toRefs, computed} from 'vue'
+import {useRouter, useRoute} from 'vue-router'
+import {useStore} from 'vuex'
 export default defineComponent({
   name: 'Home',
   components: {
@@ -38,6 +42,19 @@ export default defineComponent({
     let addNum = computed(() => {
       return num.value + data.num1
     })
+    let router = useRouter()
+    let route = useRoute()
+    console.log(router)
+    console.log(route)
+    console.log(route.query)
+    let goto = () => {
+      router.push({name: 'About', query: {name: name.value, num: num.value}})
+    }
+    let store = useStore()
+    console.log(store)
+    let list = computed(() => {
+      return store.state.list
+    })
     return {
       num,
       name,
@@ -46,7 +63,9 @@ export default defineComponent({
       ...toRefs(data),
       clickNum,
       clickNum1,
-      addNum
+      addNum,
+      goto,
+      list
     }
   }
 
